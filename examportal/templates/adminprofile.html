@@ -1,0 +1,21 @@
+{% extends 'adminhome.html' %}
+{% block 'body' %}
+<table align="center" border="0" width="40%" height="30%">
+    <tr>
+        <td>ID</td>
+        <td>{{profile.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{profile.username}}</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>{{profile.email}}</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>{{profile.password}}</td>
+    </tr>
+</table>
+{% endblock %}

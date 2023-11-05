@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <link rel = "stylesheet" href= "{% static 'css/loginstyle.css' %}">
+    <h3 align="center" style="color:red">{{message}}</h3>
+    <title>Login Page</title>
+</head>
+<body>
+{% block 'body' %}
+    <h2 align="center">Login</h2>
+    <div class="container">
+        <form action="{% url 'checkfacultylogin' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button type="submit">Login</button>
+            <br>
+            <br>
+            <div class="psw"><a href="{% url 'sendotp' %}">ForgotPassword?</a></div>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

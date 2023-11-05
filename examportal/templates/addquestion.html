@@ -1,0 +1,21 @@
+{% extends 'adminhome.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<h2 align = "center">Add Question</h2>
+<form method="POST" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+                {% for field in questionForm %}
+        <tr>
+            <td><label>{{ field.label }}</label></td>
+            <td>{{ field }}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </div>
+    
+
+    <button type="submit" class="btn btn-success" style="border-radius:0px;">Submit Question</button>
+  </form>
+<br><br><br>
+{% endblock content %}

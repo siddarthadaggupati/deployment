@@ -1,0 +1,57 @@
+{% extends 'faculty/facultyhome.html' %}
+{% block 'body' %}
+
+<h1 align="center">My Courses</h1>
+<input class="form-control" id="myInput" type="text" placeholder="Course Title">
+<br>
+<table align="center" border="2" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <td>Department</td>
+        <td>Program</td>
+        <td>Academic Year</td>
+        <td>Semester</td>
+        <td>Year</td>
+        <td>Course Code</td>
+        <td>Course Title</td>
+        <td>Component</td>
+        <td>Section</td>
+        <td>Type</td>
+    </tr>
+    </thead>
+    <tbody id="myTable">
+    {% for fcourse in fcourses %}
+    <tr>
+        <td>{{fcourse.course.department}}</td>
+        <td>{{fcourse.course.program}}</td>
+        <td>{{fcourse.course.acadamicyear}}</td>
+        <td>{{fcourse.course.semester}}</td>
+        <td>{{fcourse.course.year}}</td>
+        <td>{{fcourse.course.coursecode}}</td>
+        <td>{{fcourse.course.coursetitle}}</td>
+        <td>{{fcourse.component}}</td>
+        <td>{{fcourse.section}}</td>
+        <td bgcolor="red">
+            {% if fcourse.type is True %}
+            Main Faculty
+            {% endif %}
+            {% if fcourse.type is False %}
+            Assistance Faculty
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{% endblock %}

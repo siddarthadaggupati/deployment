@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Exam Portal</title>
+    <link rel="stylesheet" href="{% static 'css/adminhomecss.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+      .dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 16px;
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'admindashboard' %}">AMS Exam Portal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'admindashboard' %}">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+          <li class="nav-item">
+              <a  class="nav-link" href="{% url 'admindashboard' %}" style="color:white">Dashboard</a>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false" style="color:white">Student</a>
+          <div class="dropdown-menu pink-bg">
+            <a class="dropdown-item" href="{% url 'addstudent' %}">Add Student</a>
+            <a class="dropdown-item" href="{% url 'updatestudent' %}">Update Student</a>
+            <a class="dropdown-item" href="{% url 'deletestudent' %}">Delete Student</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false" style="color:white">Faculty</a>
+          <div class="dropdown-menu pink-bg">
+            <a class="dropdown-item" href="{% url 'addfaculty' %}">Add Faculty</a>
+            <a class="dropdown-item" href="{% url 'updatefaculty' %}">Update Faculty</a>
+            <a class="dropdown-item" href="{% url 'deletefaculty' %}">Delete Faculty</a>
+          </div>
+        </li>
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false" style="color:white">Courses</a>
+          <div class="dropdown-menu pink-bg">
+            <a class="dropdown-item" href="{% url 'addcourse' %}">Add Courses</a>
+            <a class="dropdown-item" href="{% url 'updatecourse' %}">Update Courses</a>
+            <a class="dropdown-item" href="{% url 'deletecourse' %}">Delete Courses</a>
+          </div>
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false" style="color:white">Exam</a>
+          <div class="dropdown-menu pink-bg">
+            <a class="dropdown-item" href="{% url 'conductexam' %}">conduct exam</a>
+            <a class="dropdown-item" href="{% url 'addquestion' %}">add question</a>
+            <a class="dropdown-item" href="{% url 'liveexam' %}">live exams</a>
+          </div>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'adminprofile' %}" style="color:white">Profile</a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'facultycoursemapping' %}" style="color:white">FacultyCourseMapping</a>
+        </li>
+          <li class="nav-item">
+          <a  class="nav-link" href="{% url 'changepasswordadmin' %}" style="color:white">Change Password</a>
+        </li>
+      </ul>
+    </div>
+    <form class="d-flex">
+        {% csrf_token %}
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+          <a href="{% url 'adminlogin' %}">Logout</a>
+        </button>
+      </form>
+  </div>
+</nav>
+    {% block 'body' %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'adminhome.html' %}
+{% block 'body' %}
+
+<h1 align="center">Update Students</h1>
+<input class="form-control" id="myInput" type="text" placeholder="Course Title">
+<br>
+<table align="center" border="2" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Student ID</td>
+        <td>Name</td>
+        <td>Gender</td>
+        <td>Department</td>
+        <td>Program</td>
+        <td>Semester</td>
+        <td>Year</td>
+        <td>Email</td>
+        <td>Contact</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody id="myTable">
+    {% for course in studentdata %}
+    <tr>
+        <td>{{course.id}}</td>
+        <td>{{course.studentid}}</td>
+        <td>{{course.fullname}}</td>
+        <td>{{course.gender}}</td>
+        <td>{{course.department}}</td>
+        <td>{{course.program}}</td>
+        <td>{{course.semester}}</td>
+        <td>{{course.year}}</td>
+        <td>{{course.email}}</td>
+        <td>{{course.contact}}</td>
+        <td>
+            <a href="/studentupdation/{{course.id}}" style="color:red">Update</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{% endblock %}

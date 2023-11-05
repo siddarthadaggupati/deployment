@@ -1,0 +1,29 @@
+{% extends 'faculty/facultyhome.html' %}
+{% block 'body' %}
+<table align="center" border="0" width="40%" height="80%">
+    <tr>
+        <td>ID</td>
+        <td>{{profile.facultyid}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{profile.fullname}}</td>
+    </tr>
+    <tr>
+        <td>Department</td>
+        <td>{{profile.department}}</td>
+    </tr>
+<tr>
+        <td>Designation</td>
+        <td>{{profile.designation}}</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>{{profile.email}}</td>
+    </tr>
+    <tr>
+        <td>Contact</td>
+        <td>{{profile.contact}}</td>
+    </tr>
+</table>
+{% endblock %}

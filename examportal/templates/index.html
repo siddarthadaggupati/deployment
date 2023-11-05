@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/adminhomecss.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>AMS Portal</title>
+  <style>
+    .logo-img{
+    height: 40px;
+    width: 100px;
+    }
+     body{
+            /* Set the background image */
+            background-image: url("{% static 'images/img.png' %}");
+            /* Set background size and properties */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <img src="{% static 'images/img_1.png' %}" class="logo-img" alt="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color:white">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color:white">Contactus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'studentlogin' %}" style="color:white">Student Login</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'adminlogin' %}" style="color:white">Admin Login</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'facultylogin' %}" style="color:white">Faculty Login</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+      </form>
+    </div>
+  </div>
+</nav>
+{% block 'body' %}
+<br>
+<section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+  <div class="container text-center">
+    <h2 class="display-4 d-none d-sm-block" style="color:">AMS Online Exam Portal</h2>
+    <p class="display-4 d-none d-sm-block">Where Curiosity Meets Evaluation</p>
+    <p class="lead">Login now to start your first online examination</p>
+  </div>
+</section>
+{% endblock %}
+</body>
+</html>

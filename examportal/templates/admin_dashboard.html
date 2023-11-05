@@ -1,0 +1,54 @@
+{% extends 'adminhome.html' %}
+{% load static %}
+{% block 'body' %}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/facultydashboardcss.css' %}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+<br><br>
+
+  <div class="container" align="center">
+    <div align = "center">
+      
+        <div class="col-md-4 col-xl-4">
+            <div class="card bg-c-gtx order-card">
+              <div class="card-block">
+                <h2 class="text-left"><i class="fas fa-user-graduate f-left"></i><span>&nbsp;&nbsp;<small style="color:white">Total students</small>  {{total_student}}</span></h2>
+                
+              </div>
+            </div>
+          </div>
+  
+      <div class="col-md-4 col-xl-4">
+        <div class="card bg-c-yellow order-card">
+          <div class="card-block">
+           <h2 class="text-left"><i class="fas fa-book f-left"></i><span>&nbsp;&nbsp;<small style="color:white">Total Courses</small>  {{total_course}}</span></h2>
+            
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-xl-4">
+        <div class="card bg-c-blue order-card">
+          <div class="card-block">
+            <h2 class="text-left"><i class="fas fa-user f-left"></i><span>&nbsp;&nbsp;<small style="color:white">Total Faculty</small>  {{total_faculty}}</span></h2>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+
+{% endblock %}

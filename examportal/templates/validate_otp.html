@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href= "{% static 'css/loginstyle.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<h3 align="center">OTP sent successfully!</h3>
+    <h4 align="center">Validate OTP</h4>
+    <center>
+        <h1 align="center" style="color:red">{{msg}}</h1>
+    </center>
+<div class="container">
+    <form method="post" action="{% url 'validate_otp' %}">
+        {% csrf_token %}
+
+            <br>
+        <label for="email">Email:</label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <br><br>
+        <label for="otp">OTP:</label>
+        <input type="text" id="otp" name="otp" required><br><br>
+        <button type="submit" class ="black-button">Validate OTP</button>
+    </form>
+</div>
+</body>
+</html>
