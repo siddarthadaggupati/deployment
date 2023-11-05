@@ -7,6 +7,9 @@ urlpatterns = [
     path("changepasswordstudent/", views.passwordfunction, name='changepasswordstudent'),
     path("live_exam/", views.examfunction, name='live_exam'),
     path("startexam/<int:pk>",views.startexam,name='startexam'),
+    path('paymentindex/', views.paymentindex, name='paymentindex'),
+    path("payment/", views.order_payment, name="payment"),
+    path("callback/", views.callback, name="callback"),
 ]
 
 

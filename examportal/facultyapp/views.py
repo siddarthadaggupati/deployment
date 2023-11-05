@@ -14,7 +14,9 @@ def checkfacultylogin(request):
         msg = "Login Failed"
         return render(request,'faculty/facultylogin.html',{"message":msg})
 def facultyhome(request):
-    return render(request,'faculty/facultyhome.html')
+    ts = Student.objects.all().count()
+    tc = Course.objects.all().count()
+    return render(request,'faculty/facultyhome.html',{'total_student':ts,'total_course':tc})
 
 def facultychangepassword(request):
     if request.method == 'POST':

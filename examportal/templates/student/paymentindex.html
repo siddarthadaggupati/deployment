@@ -1,0 +1,29 @@
+{% extends 'student/studenthome.html' %}
+{% block 'body' %}
+<h1 align="center">Certificate Exam Payment</h1>
+<div class="col-6 mx-auto" style="margin-top:10%;">
+    <form action="{% url 'payment' %}" method='POST'>
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Name:</label>
+          <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <label for="dropdown">Select Course:</label>
+        <div class="form-label">
+    <select id="dropdown" class="form-control">
+        <option value="option1">PCAP-1500</option>
+        <option value="option2">BEC-1500</option>
+        <option value="option3">ORACLE-1000</option>
+        <option value="option4">MYSQL-2500</option>
+    </select>
+            </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Amount</label>
+          <input type="number" name="amount" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div>
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+        </div>
+      </form>
+</div>
+{% endblock %}

@@ -136,3 +136,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'examportala2@gmail.com'  # Replace with your email
 EMAIL_HOST_PASSWORD = 'etonfikhkgbujdcc'  # Replace with your email password
+
+RAZORPAY_KEY_ID = 'rzp_test_06GeKary0jkcOO'
+RAZORPAY_KEY_SECRET = 'DsqFZoH2con0fG6ucBH7XtaP'
